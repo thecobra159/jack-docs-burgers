@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:jack_doc_burguer/views/home.dart';
 import 'package:jack_doc_burguer/views/login.dart';
 import 'package:jack_doc_burguer/views/sign_up.dart';
+import 'package:jack_doc_burguer/views/splash_screen.dart';
 
 class RouteGenerator {
   // ignore: missing_return
@@ -8,11 +10,13 @@ class RouteGenerator {
     final args = settings.arguments;
     switch (settings.name) {
       case "/":
-        return MaterialPageRoute(builder: (_) => Login());
+        return MaterialPageRoute(builder: (_) => JackDocSplashScreen());
       case "/login":
         return MaterialPageRoute(builder: (_) => Login());
-      case "/signup":
+      case "/signUp":
         return MaterialPageRoute(builder: (_) => SignUp());
+      case "/home":
+        return MaterialPageRoute(builder: (_) => Home());
       default:
         _routeError();
     }

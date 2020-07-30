@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -11,50 +10,6 @@ class _SignUpState extends State<SignUp> {
   var _controllerEmail = TextEditingController();
   var _controllerPassword = TextEditingController();
   var _controllerConfirmPassword = TextEditingController();
-
-  _renderSocialMediaLogin(width, height, color) {
-    return Container(
-      width: width,
-      height: height * 0.05,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          GestureDetector(
-            onTap: () => Fluttertoast.showToast(
-                msg: "Facebook",
-                toastLength: Toast.LENGTH_SHORT,
-                gravity: ToastGravity.BOTTOM,
-                timeInSecForIosWeb: 1,
-                backgroundColor: Colors.transparent.withOpacity(0.5),
-                textColor: Colors.white,
-                fontSize: 16.0
-            ),
-            child: Image.asset(
-              "assets/images/facebook_login.png",
-              color: color,
-            ),
-          ),
-          GestureDetector(
-            onTap: () => Fluttertoast.showToast(
-                msg: "Google",
-                toastLength: Toast.LENGTH_SHORT,
-                gravity: ToastGravity.BOTTOM,
-                timeInSecForIosWeb: 1,
-                backgroundColor: Colors.transparent.withOpacity(0.5),
-                textColor: Colors.white,
-                fontSize: 16.0
-            ),
-            child: Image.asset(
-              "assets/images/google_login.png",
-              color: color,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 
   _renderEmailInputText(width, height, color) {
     return Container(
@@ -198,15 +153,6 @@ class _SignUpState extends State<SignUp> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  _renderSocialMediaLogin(_width, _height, _appColor),
-                  Padding(
-                    padding: EdgeInsets.only(top: 25, bottom: 15),
-                    child: Container(
-                      width: _width * 0.35,
-                      height: 1,
-                      color: _appColor,
-                    ),
-                  ),
                   _renderEmailInputText(_width, _height, _appColor),
                   _renderPasswordInputText(_width, _height, _appColor),
                   _renderConfirmPasswordInputText(_width, _height, _appColor),

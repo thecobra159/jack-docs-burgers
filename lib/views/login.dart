@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:jack_doc_burguer/views/sign_up.dart';
+import 'package:jack_doc_burguer/views/splash_screen.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -29,23 +31,22 @@ class _LoginState extends State<Login> {
                 timeInSecForIosWeb: 1,
                 backgroundColor: Colors.transparent.withOpacity(0.5),
                 textColor: Colors.white,
-                fontSize: 16.0
-            ),
+                fontSize: 16.0),
             child: Image.asset(
               "assets/images/facebook_login.png",
               color: color,
             ),
           ),
           GestureDetector(
-            onTap: () => Fluttertoast.showToast(
-                msg: "Google",
-                toastLength: Toast.LENGTH_SHORT,
-                gravity: ToastGravity.BOTTOM,
-                timeInSecForIosWeb: 1,
-                backgroundColor: Colors.transparent.withOpacity(0.5),
-                textColor: Colors.white,
-                fontSize: 16.0
-            ),
+            onTap: () =>
+                Fluttertoast.showToast(
+                    msg: "Google",
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.BOTTOM,
+                    timeInSecForIosWeb: 1,
+                    backgroundColor: Colors.transparent.withOpacity(0.5),
+                    textColor: Colors.white,
+                    fontSize: 16.0),
             child: Image.asset(
               "assets/images/google_login.png",
               color: color,
@@ -124,6 +125,11 @@ class _LoginState extends State<Login> {
         borderRadius: BorderRadius.circular(30),
       ),
       onPressed: () => {},
+      onLongPress: () =>
+          Navigator.push(
+              context,
+              new MaterialPageRoute(
+                  builder: (context) => new JackDocSplashScreen())),
       child: Text(
         "Login",
         style: TextStyle(
@@ -173,7 +179,7 @@ class _LoginState extends State<Login> {
                     child: Container(
                       width: _width * 0.35,
                       height: 1,
-                      color: _appColor,
+                      color: Colors.blueGrey,
                     ),
                   ),
                   _renderEmailInputText(_width, _height, _appColor),
@@ -182,15 +188,11 @@ class _LoginState extends State<Login> {
                   Padding(
                     padding: EdgeInsets.only(top: 25),
                     child: GestureDetector(
-                      onTap: () => Fluttertoast.showToast(
-                          msg: "Cadastre-se",
-                          toastLength: Toast.LENGTH_SHORT,
-                          gravity: ToastGravity.BOTTOM,
-                          timeInSecForIosWeb: 1,
-                          backgroundColor: Colors.transparent.withOpacity(0.5),
-                          textColor: Colors.white,
-                          fontSize: 16.0
-                      ),
+                      onTap: () =>
+                          Navigator.push(
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) => new SignUp())),
                       child: Text(
                         "Cadastre-se",
                         style: TextStyle(
